@@ -6,9 +6,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="style.css">
       <style>
-        body, html {
-          height: 100% 
-        } 
         .bgimg {
           background-image: url('images/profile.png');
           min-height: 100%;
@@ -18,35 +15,89 @@
         }
         .display-leftmiddle {
             left: 15%;
+        } 
+        section {
+          height: 100vh; /* Adjust this value based on your content */
+          justify-content: center;
+          align-items: center;
+        }
+        nav {
+          position: sticky;
+          padding: 10px;
+          z-index: 100;
+          right: 0;
+        }
+
+        nav ul {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        nav li {
+          margin: 0 15px;
+        }
+        nav a {
+          text-decoration: none;
         }
       </style>
   </head>
   <body>
-    <div >
+    <section id="home">
+    <nav>
       <ul class="w3-ul w3-right">
-        <li class="w3-bar-item w3-btn"><a href="home.asp">Home</a></li>
-        <li class="w3-bar-item w3-btn"><a href="blog.asp">Apps</a></li>
-        <li class="w3-bar-item w3-btn"><a href="blog.asp">Blog</a></li>
-        <li class="w3-bar-item w3-btn"><a href="contact.asp">Contact</a></li>
+        <li class="nav-bar-item w3-button"><a href="#home">Home</a></li>
+        <li class="nav-bar-item w3-button"><a href="#apps">Apps</a></li>
+        <li class="nav-bar-item w3-button"><a href="#blog">Blog</a></li>
+        <li class="nav-bar-item w3-button"><a href="#contact">Contact</a></li>
       </ul>
-    </div>
+    </nav>
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-black animate-opacity">
-      <div class="w3-display-topleft w3-padding-large w3-xlarge">
-            JA.
-      </div>
+      <div class="w3-display-topleft w3-padding-large w3-xlarge">JA.</div>
       <div class="display-leftmiddle">
-        <h1 class="w3-jumbo animate-top">
-            Jason<br>Aagaard.</br>
-        </h1>
-        <p class="w3-large animate-right">
-          Professional Mobile App Developer. 
-          <br>Based in Sweden. Born in Canada.</br>
-        </p>
+        <h1 class="w3-jumbo animate-top">Jason<br>Aagaard.</br></h1>
+        <p class="w3-large animate-right">Professional Mobile App Developer.<br>Based in Sweden. Born in Canada.</br></p>
       </div>
       <div class="display-rightmiddle">
         <h1 class="w3-jumbo animate-right">&lt; Coder &gt;</h1>
         <p class="w3-large w3-center animate-right">iOS • Android | Swift • Kotlin</p>
       </div>
     </div>
+    </section>
+
+    <section id="apps">
+        <h1 class="w3-jumbo">&lt; Apps &gt;</h1>
+    </section>
+
+    <section id="blog">
+        <h1 class="w3-jumbo">&lt; Blog &gt;</h1>
+    </section>
+
+    <section id="contact">
+        <h1 class="w3-jumbo">&lt; Contact &gt;</h1>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        const navLinks = document.querySelectorAll('nav a');
+
+        for (const link of navLinks) {
+            link.addEventListener('click', smoothScroll);
+        }
+
+        function smoothScroll(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            const navbarHeight = document.querySelector('nav').offsetHeight;
+            const offsetTop = targetSection.getBoundingClientRect().top;
+            const totalOffset = offsetTop - navbarHeight;
+
+            window.scrollBy({
+                top: totalOffset,
+                behavior: 'smooth',
+            });
+        }
+    </script>
   </body>
 </html>
