@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-stylistic": "^0.4.3"
+  },
+  "scripts": {
+    "lint:styles": "stylelint style.css"
+  }
+}

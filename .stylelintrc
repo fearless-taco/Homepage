@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+     "stylelint-stylistic/config"
+  ],
+  "plugins": [
+    "stylelint-stylistic"
+  ]
+}
