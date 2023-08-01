@@ -4,47 +4,9 @@
     <title>Jason Aagaard</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="style.css">
-      <style>
-        .bgimg {
-          background-image: url('images/avatar.png');
-          min-height: 90%;
-          background-position: bottom right;
-          background-size: auto;
-          background-repeat: no-repeat;
-        }
-        section {
-          height: 100vh;
-          justify-content: center;
-          align-items: center;
-        }
-        nav {
-          position: sticky;
-          padding: 10px;
-          z-index: 100;
-          right: 0;
-        }
-        nav ul {
-          list-style: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        nav li {
-          margin: 0 15px;
-        }
-        nav a {
-          text-decoration: none;
-        }
-
-        .margin-left {
-          margin-left: 10%;
-        }
-        .accent-color {
-          --color: #F05138;
-          border-color: var(--color);
-        }
-      </style>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/homepage-style.css">
+      <script src="js/slow-scroll.js"></script>
   </head>
   <body>
       <main class="background-dark text-white">
@@ -100,26 +62,3 @@
       </main>
   </body>
 </html>
-
-<script>
-  // Smooth scrolling for anchor links
-  const navLinks = document.querySelectorAll('nav a');
-
-  for (const link of navLinks) {
-      link.addEventListener('click', smoothScroll);
-  }
-
-  function smoothScroll(event) {
-    event.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-    const navbarHeight = document.querySelector('nav').offsetHeight;
-    const offsetTop = targetSection.getBoundingClientRect().top;
-    const totalOffset = offsetTop - navbarHeight;
-
-    window.scrollBy({
-      top: totalOffset,
-      behavior: 'smooth',
-      });
-    }
-</script>

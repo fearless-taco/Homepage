@@ -1,0 +1,45 @@
+.bgimg {
+  background-image: url("../images/avatar.png");
+  min-height: 90%;
+  background-position: bottom right;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+section {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  position: sticky;
+  padding: 10px;
+  z-index: 100;
+  right: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.margin-left {
+  margin-left: 10%;
+}
+
+.accent-color {
+  --color: #f05138;
+
+  border-color: var(--color);
+}
