@@ -105,7 +105,7 @@ html,
 body { font-family: Raleway, Verdana, sans-serif; font-size: 15px; line-height: 1; }
 html { overflow-x: hidden; }
 h1 { font-size: 50px; }
-h2 { font-size: 30px; }
+h2 { font-size: 32px; }
 h3 { font-size: 24px; }
 h4 { font-size: 20px; }
 h5 { font-size: 18px; }
@@ -370,6 +370,9 @@ a { color: inherit; }
 
 /* Placement */
 .flex-container { display: flex; }
+.flex-container h6 { max-width: 580px; }
+.flex-align-center { align-items: center;}
+.flex-justify-center { justify-content: center; }
 .hstack { flex-direction: row; }
 .vstack { flex-direction: column; }
 
@@ -591,6 +594,9 @@ a { color: inherit; }
 
 .text-black,
 .hover-text-black:hover { color: #000; }
+
+.text-gray,
+.hover-text-gray:hover { color: #B5B5B5; }
 
 .border-white,
 .hover-border-white:hover { border-color: #fff; }
