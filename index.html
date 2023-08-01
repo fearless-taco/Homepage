@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>Jason Aagaard</title>
+    <title>Jason Aagaard</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="style.css">
       <style>
         .bgimg {
-          background-image: url('images/profile.png');
+          background-image: url('images/.png');
           min-height: 100%;
           background-position: center;
           background-size: auto;
           background-repeat: no-repeat;
         }
-        .display-middle {
-            left: 25%;
-        } 
+        .display-container {
+            left: 30%;
+            top: 42%;
+            
+        }
         section {
           height: 100vh; /* Adjust this value based on your content */
           justify-content: center;
@@ -43,8 +45,9 @@
       </style>
   </head>
   <body>
-    <section id="home">
+    <section id="home" class="background-dark w3-text-white">
     <nav>
+      <div class="display-topleft w3-padding-large w3-xlarge display-position-fixed"> &lt;JA&gt; </div>
       <ul class="w3-ul w3-right">
         <li class="nav-bar-item w3-button"><a href="#home">Home</a></li>
         <li class="nav-bar-item w3-button"><a href="#apps">Apps</a></li>
@@ -52,17 +55,11 @@
         <li class="nav-bar-item w3-button"><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="bgimg display-container w3-animate-opacity w3-text-black animate-opacity">
-      <div class="display-topleft w3-padding-large w3-xlarge display-position-fixed">JA.</div>
-      <div class="display-middle">
-        <h1 class="w3-jumbo animate-top">Jason<br>Aagaard.</br></h1>
-        <p class="w3-large animate-right">Professional Mobile App Developer.<br>Based in Sweden. Born in Canada.</br></p>
-      </div>
-      <div class="display-rightmiddle">
-        <h1 class="w3-jumbo animate-right">&lt; Coder &gt;</h1>
-        <p class="w3-large w3-center animate-right">iOS • Android | Swift • Kotlin</p>
-      </div>
-    </div>
+      <div class="display-container display-middle">
+        <h3 class="animate-top">Jason Aagaard  &lt; App Developer &gt;</h3>
+        <h1 class="animate-top">iOS • Android • Embedded C</h1>
+        <h6 class="animate-right">Based in Sweden. Born in Canada.</h6>
+     </div>
     </section>
 
     <section id="apps">
