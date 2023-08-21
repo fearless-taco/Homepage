@@ -1,64 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Jason Aagaard</title>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/homepage-style.css">
-      <script src="js/slow-scroll.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/homepage-style.css" />
   </head>
   <body>
-      <main class="background-dark text-white">
+    <main class="background-dark text-white">
+      <!-- Home Section -->
 
-          <!-- Home Section -->
+      <section id="home">
+        <nav class="nav-bar">
+          <div
+            class="display-topleft padding-large font-xxlarge display-position-fixed"
+          >
+            &lt;JA&gt;
+          </div>
+          <ul class="ul float-right">
+            <li class="nav-bar-item"><a href="#home">Home</a></li>
+            <li class="nav-bar-item"><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="bgimg display-container animate-opacity">
+          <div class="display-leftmiddle flex-container vstack margin-left">
+            <h3 class="margin-bottom-24 animate-top">
+              Jason Aagaard &lt; App Developer &gt;
+            </h3>
+            <h1 class="animate-top">iOS • Android • Embedded C</h1>
+            <h6 class="margin-bottom-48 animate-right">
+              Based in Sweden. Born in Canada.
+            </h6>
+            <div class="show-inline-block">
+              <a class="no-decoration" href="#contact">
+                <h4 class="accent-color text-white capsule">Get in Touch</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <section id="home">
-              <nav class="nav-bar">
-                  <div class="display-topleft padding-large font-xxlarge display-position-fixed"> &lt;JA&gt; </div>
-                  <ul class="ul float-right">
-                      <li class="nav-bar-item"><a href="#home">Home</a></li>
-                      <li class="nav-bar-item"><a href="#contact">Contact</a></li>
-                  </ul>
-              </nav>
-              <div class="bgimg display-container animate-opacity">
-                  <div class="display-leftmiddle flex-container vstack margin-left">
-                      <h3 class="margin-bottom-24 animate-top">Jason Aagaard  &lt; App Developer &gt;</h3>
-                      <h1 class="animate-top">iOS • Android • Embedded C</h1>
-                      <h6 class="margin-bottom-48 animate-right">Based in Sweden. Born in Canada.</h6>
-                      <div class="show-inline-block">
-                      <a class="no-decoration" href="#contact">
-                          <h4 class="accent-color text-white capsule">Get in Touch</h4>
-                      </a>
-                      </div>
-                  </div>
-              </div>
-          </section>
+      <!-- Contact Section -->
 
-          <!-- Contact Section -->
-
-          <section id="contact" class="flex-container">
-              <div class="flex-container vstack flex-align-center flex-justify-center">
-                  <div class="flex-container vstack flex-align-center font-center margin-bottom-48">
-                      <h6 class="text-gray">Get in touch</h6>
-                      <h2>Ways to Contact Me</h2>
-                      <h6>Stay in touch! Whether you have a question or a project to discuss, 
-                          feel free to reach out. You can drop me an email, and I'll get back to you promptly.</h6>
-                      <h6> Alternatively, reach out to me on LinkedIn or Github.</h6>
-                  </div>
-                  <div class="flex-container hstack flex-align-center">
-                      <a class="no-decoration" href="#contact">
-                          <h4 class="accent-color text-white capsule">jason@pixelfloof.com</h4>
-                      </a>
-                      <a class="no-decoration" href="#contact">
-                          <h4 class="accent-color text-white capsule">@fearless-taco</h4>
-                      </a>
-                      <a class="no-decoration" href="#contact">
-                          <h4 class="accent-color text-white capsule">@jasonkuan</h4>
-                      </a>
-                  </div>
-              </div>
-          </section>
-      </main>
+      <section id="contact" class="flex-container">
+        <div
+          class="flex-container vstack flex-align-center flex-justify-center"
+        >
+          <div
+            class="flex-container vstack flex-align-center font-center margin-bottom-48"
+          >
+            <h6 class="text-gray">Get in touch</h6>
+            <h2>Ways to Contact Me</h2>
+            <h6>
+              Stay in touch! Whether you have a question or a project to
+              discuss, feel free to reach out. You can drop me an email, and
+              I'll get back to you promptly.
+            </h6>
+            <h6>Alternatively, reach out to me on LinkedIn or Github.</h6>
+          </div>
+          <div class="flex-container hstack flex-align-center">
+            <a class="no-decoration" href="#contact">
+              <h4 class="accent-color text-white capsule">
+                jason@pixelfloof.com
+              </h4>
+            </a>
+            <a class="no-decoration" href="#contact">
+              <h4 class="accent-color text-white capsule">@fearless-taco</h4>
+            </a>
+            <a class="no-decoration" href="#contact">
+              <h4 class="accent-color text-white capsule">@jasonkuan</h4>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
+
+<script src="js/slow-scroll.js"></script>
