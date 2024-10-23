@@ -2,24 +2,21 @@ import Foundation
 import Publish
 import Plot
 
-// This type acts as the configuration for your website.
 struct Homepage: Website {
     enum SectionID: String, WebsiteSectionID {
-        // Add the sections that you want your website to contain here:
+        case home
         case posts
+        case about
     }
 
-    struct ItemMetadata: WebsiteItemMetadata {
-        // Add any site-specific metadata that you want to use here.
-    }
+    struct ItemMetadata: WebsiteItemMetadata {}
 
     // Update these properties to configure your website:
-    var url = URL(string: "https://your-website-url.com")!
-    var name = "Homepage"
-    var description = "A description of Homepage"
+    var url = URL(string: "https://jasonaagaard.com")!
+    var name = "Jason Aagaard"
+    var description = "Get in touch!"
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
 
-// This will generate your website using the built-in Foundation theme:
 try Homepage().publish(withTheme: .foundation)
