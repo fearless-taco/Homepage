@@ -1,6 +1,13 @@
+# MacOS
 .DS_Store
-/build
-/.build
+
+# Xcode
 /.swiftpm
 /*.xcodeproj
+
+# Publish
 .publish
+/build
+/.build
+/Output
+
