@@ -13,7 +13,7 @@ extension Theme where Site == Homepage {
     Theme(
       htmlFactory: HomepageHTMLFactory(),
       resourcePaths: [
-        "Resources/PaletteTheme/style.css",
+        "Resources/PaletteTheme/styles.css",
         "Resources/PaletteTheme/homepage.css"
       ]
     )
