@@ -27,13 +27,25 @@ extension Theme where Site == Homepage {
           Div {
             SiteHeader(context: context, selectedSectionID: nil)
             Div {
-              H3("Jason Aagaard <App Developer>")
-              H1("iOS • Android • Embedded C")
-              Paragraph(index.body)
-              Image(url: "images/avatar.png", description: "My face")
+              Div {
+                H3("Jason Aagaard <App Developer>")
+                  .class("margin-bottom-24 animate-top")
+                H1("iOS • Android • Embedded C")
+                  .class("animate-top")
+                H6(index.body)
+                  .class("margin-bottom-48 animate-right")
+                Div {
+                  Link(url: "/about") {
+                    H4("Get in touch")
+                      .class("accent-color text-white capsule")
+                  }
+                }.class("show-inline-block")
+              }
+              .class("display-leftmiddle flex-container vstack margin-left")
             }
+            .class("bgimg display-container animate-opacity")
           }
-          .class("background-dark text-white")
+          .class("custom-placement background-dark text-white")
         }
       )
     }
@@ -43,18 +55,21 @@ extension Theme where Site == Homepage {
       HTML(
         .head(for: section, on: context.site),
         .body {
-          SiteHeader(context: context, selectedSectionID: nil)
-            .class("background-dark text-white")
           Div {
-            switch section.id {
-            case .home:
-              Paragraph("Not rendered")
-            case .about:
-              Paragraph(section.body)
-            case .posts:
-              Paragraph(section.body)
+            SiteHeader(context: context, selectedSectionID: nil)
+
+            Div {
+              switch section.id {
+              case .home:
+                Paragraph("Not rendered")
+              case .about:
+                Paragraph(section.body)
+              case .posts:
+                Paragraph(section.body)
+              }
             }
           }
+          .class("full-screen background-dark text-white")
         }
       )
     }
