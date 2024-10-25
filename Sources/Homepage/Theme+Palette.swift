@@ -19,6 +19,7 @@ extension Theme where Site == Homepage {
     )
   }
 
+  // The main index.html page
   private struct HomepageHTMLFactory: HTMLFactory {
     func makeIndexHTML(for index: Publish.Index, context: Publish.PublishingContext<Homepage>) throws -> Plot.HTML {
       HTML(
@@ -26,21 +27,28 @@ extension Theme where Site == Homepage {
         .body {
           SiteHeader(context: context, selectedSectionID: nil)
           Wrapper {
+            H3("Jason Aagaard <App Develoeper>")
+            H1("iOS • Android • Embedded C")
             Paragraph(index.body)
-            Image(url: "avatar.png", description: "My face")
+            Image(url: "images/avatar.png", description: "My face")
           }
         }
       )
     }
 
+    // Sections in the site header
     func makeSectionHTML(for section: Publish.Section<Homepage>, context: Publish.PublishingContext<Homepage>) throws -> Plot.HTML {
       HTML(
         .head(for: section, on: context.site),
         .body {
+          SiteHeader(context: context, selectedSectionID: nil)
           Wrapper {
-            SiteHeader(context: context, selectedSectionID: nil)
-            H1(section.title)
-            ItemList(items: section.items, site: context.site)
+            switch section.id {
+            case .about:
+              Paragraph(section.body)
+            case .posts:
+              Paragraph(section.body)
+            }
           }
         }
       )
@@ -88,7 +96,7 @@ extension Theme where Site == Homepage {
       Header {
         Wrapper {
           Link(context.site.name, url: "/")
-            .class("site-name")
+            .class("nav-bar")
 
           if Value.SectionID.allCases.count > 1 {
             navigation
@@ -102,10 +110,8 @@ extension Theme where Site == Homepage {
         List(Value.SectionID.allCases) { sectionID in
           let section = context.sections[sectionID]
 
-          return Link(section.title,
-                      url: section.path.absoluteString
-          )
-          .class(sectionID == selectedSectionID ? "selected" : "")
+          return Link(section.title, url: section.path.absoluteString)
+            .class(sectionID == selectedSectionID ? "selected" : "")
         }
       }
     }

@@ -4,7 +4,6 @@ import Plot
 
 struct Homepage: Website {
   enum SectionID: String, WebsiteSectionID {
-    case home
     case posts
     case about
   }
