@@ -4,8 +4,12 @@ description: Get in touch
 tags: backlog
 ---
 
-# TODO: 
-- [ ] Style SiteHeader (Maybe take demo and modify it)
-- [ ] Use custom font
-- [ ] Style "PaletteTheme" About page like draft branch for Contact page
+# Articles 
 - [ ] Style "PaletteTheme" main like draft branch main page 
+- [/] Style "PaletteTheme" About page like draft branch for Contact page
+
+
+## DONE: 
+- [x] Learn how to use my styles.css (Fixed: Clear cache)
+- [x] Use custom font
+- [x] Style SiteHeader (Maybe take demo and modify it)

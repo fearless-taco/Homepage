@@ -13,8 +13,7 @@ extension Theme where Site == Homepage {
     Theme(
       htmlFactory: HomepageHTMLFactory(),
       resourcePaths: [
-        "Resources/PaletteTheme/styles.css",
-        "Resources/PaletteTheme/homepage.css"
+        "Resources/PaletteTheme/styles.css"
       ]
     )
   }
@@ -25,13 +24,16 @@ extension Theme where Site == Homepage {
       HTML(
         .head(for: index, on: context.site),
         .body {
-          SiteHeader(context: context, selectedSectionID: nil)
-          Wrapper {
-            H3("Jason Aagaard <App Develoeper>")
-            H1("iOS • Android • Embedded C")
-            Paragraph(index.body)
-            Image(url: "images/avatar.png", description: "My face")
+          Div {
+            SiteHeader(context: context, selectedSectionID: nil)
+            Div {
+              H3("Jason Aagaard <App Developer>")
+              H1("iOS • Android • Embedded C")
+              Paragraph(index.body)
+              Image(url: "images/avatar.png", description: "My face")
+            }
           }
+          .class("background-dark text-white")
         }
       )
     }
@@ -42,8 +44,11 @@ extension Theme where Site == Homepage {
         .head(for: section, on: context.site),
         .body {
           SiteHeader(context: context, selectedSectionID: nil)
-          Wrapper {
+            .class("background-dark text-white")
+          Div {
             switch section.id {
+            case .home:
+              Paragraph("Not rendered")
             case .about:
               Paragraph(section.body)
             case .posts:
@@ -80,68 +85,28 @@ extension Theme where Site == Homepage {
 
   // MARK: - Helpers
 
-  private struct Wrapper: ComponentContainer {
-    @ComponentBuilder var content: ContentProvider
-
-    var body: Component {
-      Div(content: content).class("wrapper")
-    }
-  }
-
   private struct SiteHeader<Value: Website>: Component {
     var context: PublishingContext<Value>
     var selectedSectionID: Value.SectionID?
 
     var body: Component {
       Header {
-        Wrapper {
-          Link(context.site.name, url: "/")
-            .class("nav-bar")
-
-          if Value.SectionID.allCases.count > 1 {
-            navigation
+        Navigation {
+          Div {
+            Link("<JA>", url: "/")
+              .class("display-topleft padding-large font-xxlarge display-position-fixed")
           }
+
+          List(Value.SectionID.allCases) { sectionID in
+            let section = context.sections[sectionID]
+            return Link(section.title, url: sectionID.rawValue == "home" ?  "/" : section.path.absoluteString)
+              .class("nav-bar-item")
+          }
+          .listStyle(.unordered)
+          .class("ul float-right")
         }
+        .class("nav-bar")
       }
-    }
-
-    private var navigation: Component {
-      Navigation {
-        List(Value.SectionID.allCases) { sectionID in
-          let section = context.sections[sectionID]
-
-          return Link(section.title, url: section.path.absoluteString)
-            .class(sectionID == selectedSectionID ? "selected" : "")
-        }
-      }
-    }
-  }
-
-  private struct ItemList<Value: Website>: Component {
-    var items: [Item<Value>]
-    var site: Value
-
-    var body: Component {
-      List(items) { item in
-        Article {
-          H1(Link(item.title, url: item.path.absoluteString))
-          ItemTagList(item: item, site: site)
-          Paragraph(item.description)
-        }
-      }
-      .class("item-list")
-    }
-  }
-
-  private struct ItemTagList<Value: Website>: Component {
-    var item: Item<Value>
-    var site: Value
-
-    var body: Component {
-      List(item.tags) { tag in
-        Link(tag.string, url: site.path(for: tag).absoluteString)
-      }
-      .class("tag-list")
     }
   }
 }
