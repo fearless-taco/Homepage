@@ -447,6 +447,7 @@ hr {
 .flex-container h6 { max-width: 580px; }
 .flex-align-center { align-items: center; }
 .flex-justify-center { justify-content: center; }
+.flex-top-padding { padding-top: 25vh; }
 .hstack { flex-direction: row; }
 .vstack { flex-direction: column; }
 
@@ -712,10 +713,6 @@ hr {
   align-items: center;
 }
 
-.custom-placement {
-  height: 100vh;
-}
-
 nav {
   position: sticky;
   padding: 10px;
@@ -746,4 +743,9 @@ nav a {
   --color: #f05138;
 
   border-color: var(--color);
+}
+
+.flex-container-top-middle {
+  display: flex;
+  padding-top: 25vh; 
 }

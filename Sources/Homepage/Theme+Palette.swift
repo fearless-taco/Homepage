@@ -62,14 +62,37 @@ extension Theme where Site == Homepage {
               switch section.id {
               case .home:
                 Paragraph("Not rendered")
+
               case .about:
-                Paragraph(section.body)
+                Div {
+                  H6("Get in touch!")
+                    .class("text-gray")
+                  H2("Ways to Contact Me")
+                  H6("Stay in touch! Whether you have a question or a project to " +
+                     "discuss, feel free to reach out. You can drop me an email, and " +
+                     "I'll get back to you promptly."
+                  )
+                  H6("Alternatively, reach out to me on LinkedIn or Github.")
+
+                  Div {
+                    H4("jason@pixelfloof.com")
+                      .class("accent-color text-white capsule")
+                    H4("fearless-taco")
+                      .class("accent-color text-white capsule")
+                    H4("@jsonkuan")
+                      .class("accent-color text-white capsule")
+
+                  }.class("flex-container hstack flex-align-center")
+                }
+                .class("flex-container vstack flex-align-center flex-justify-center flex-top-padding")
+
               case .posts:
                 Paragraph(section.body)
               }
             }
+            .class("custom-placement")
           }
-          .class("full-screen background-dark text-white")
+          .class("background-dark text-white")
         }
       )
     }
